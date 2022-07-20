@@ -18,7 +18,123 @@ body{
 
 
 
+.top-banner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.inner-top-banner{
+    width: 1321px;
+    height: 646px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(30deg, #1a1b79, #aa154d);
+    border-radius: 30px;
+    margin: 50px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.inner-top-banner::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.1);
+    z-index: 1;
+    transform-origin: top right;
+    transform: scale(150%) rotateZ(-45deg);
+    right: -335px;
+    top: 300px;
+    transition: 0.7s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.inner-top-banner:hover::before{
+    right: 65px;
+    top: -50px;
+}
+
+.football{
+    position: absolute;
+    bottom: 72px;
+    right: 403px;
+    z-index: 3;
+    width: 150px;
+    animation: ballAnimate 3s infinite;
+    transform-origin: center;
+}
+
+@keyframes ballAnimate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.left-top-banner{
+    width: 531px;
+    margin-left: 106px;
+    z-index: 2;
+}
+
+.left-top-banner > h2{
+    font-size: 70px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 80px;
+}
+
+.left-top-banner > p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    width: 506px;
+    color: #ffffff;
+    padding: 20px 0 50px 0;
+}
+
+.left-top-banner > a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 16px 25px;
+    border-radius: 5px;
+    background-color: #DD0049;
+    border: 3px solid #DD0049;
+    transition: 0.3s all ease-in-out;
+}
+
+.left-top-banner > a:hover{
+    background-color: #ffffff;
+    color: #DD0049;
+    box-shadow: 5px 15px 30px rgba(0,0,0,0.4);
+    border-radius: 50px;
+}
+
+.left-top-banner > a > i{
+    margin-left: 8px;
+}
+
+.right-top-banner{
+    width: 581px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-right: 79px;
+    z-index: 2;
+}
+
+.right-top-banner > img{
+    width: 100%;
+    margin-bottom: -34px;
+}
 
 
 
@@ -26,3 +142,154 @@ body{
 
 
 /* For Index.html(Home/Upcoming Match) Page Ends*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------
+        Responsive Breakpoints 
+--------------------------------------*/
+
+/* For TAB */
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+    .inner-top-banner{
+        width: calc(100% - 100px);
+        margin: 50px;
+        height: 398px;
+    }
+
+    .left-top-banner{
+        width: 316px;
+        margin-left: 76px;
+    }
+
+    .left-top-banner > h2{
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .left-top-banner > p{
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+        padding: 0px 0 30px 0;
+    }
+
+    .left-top-banner > a{
+        padding: 8px 12px;
+        border: none;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .football{
+        display: none;
+    }
+
+    .right-top-banner{
+        width: 323px;
+        margin-right: 17px;
+    }
+
+    .right-top-banner > img{
+        margin-bottom: -70px;
+    }
+}
+
+/* FOR SMARTPHONES */
+@media only screen and (max-width: 767px){
+    .inner-top-banner{
+        width: calc(100% - 40px);
+        margin: 20px;
+        height: 472px;
+        flex-direction: column;
+    }
+
+    .inner-top-banner::before{
+        display: none;
+    }
+
+    .left-top-banner{
+        width: calc(100% - 76px);
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left-top-banner > h2{
+        font-size: 22px;
+        line-height: 33px;
+        text-align: center;
+        padding-top: 25px;
+        width: 228px;
+    }
+
+    .left-top-banner > p{
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+        padding: 0px 0 20px 0;
+        text-align: center;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        overflow: hidden;
+        max-height: 2.39em;
+        line-height: 1.8em;
+        
+    }
+
+    .left-top-banner > a{
+        padding: 8px 12px;
+        border: none;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .football{
+        display: none;
+    }
+
+    .right-top-banner{
+        width: 333px;
+        margin: 0;
+        margin-right: 38px;
+        overflow: hidden;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .right-top-banner > img{
+        margin: 0 !important;
+        width: 78%;
+    }
+}
