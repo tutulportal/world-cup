@@ -392,6 +392,7 @@ footer{
     align-items: center;
     border-radius: 10px;
     border: 1px solid #E8E8E8;
+    overflow: hidden;
 }
 
 .single-blog > .top-image{
